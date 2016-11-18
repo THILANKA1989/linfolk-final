@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model WebApplication8.ViewModels.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+    ViewBag.ImagePath = "../Images/coverimage.jpg";
+}
+@section Scripts{
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+<section class="section-contact">
+    <h1 class="fonts-xl text-center padset-top-lg">Keep In Touch!</h1>
+    <div class="centered-block fixed-box-md padset-md background-lightgrey">
+        <form method="post">
+            <div class="form-group">
+                <input class="form-control color-white" asp-for="Email" type="email" placeholder="Enter Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <input class="form-control color-white" asp-for="Name" type="text" maxlength="30" placeholder="Enter Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control color-white" asp-for="Message"  type="text" maxlength="300" placeholder="What you need to say?" rows="5"></textarea>
+                <span asp-validation-for="Message"></span>
+            </div>
+            <div class="form-group centered-block">
+                <input class="pull-right" type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+</section>

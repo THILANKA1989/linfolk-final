@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApplication9.Models.Category>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Home";
+    ViewBag.ImagePath = "Images/coverimage.jpg";
+}
+@section Scripts{
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/category.js"></script>
+    <script src="~/Scripts/Controllers/categoryController.js"></script>
+}
+<div class="row" ng-app="app-category">
+    <div ng-view></div>
+</div>

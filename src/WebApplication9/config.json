@@ -1,0 +1,9 @@
+﻿{
+  "AppSettings": {
+    "SiteEmailAddress": "thilankaranasinghe1989@gmail.com",
+    "MapKey": "ArnUGDDHc1L5P3GzsUx87V3tKwVCohhjTqEPsXXjjSJW3endaWP_P5mqKPBZktqz"
+  },
+  "Data": {
+    "PortContextConnection": "Server=(localdb)\\ProjectsV13;Database=Portfolio;Trusted_Connection=true"
+  }
+}
