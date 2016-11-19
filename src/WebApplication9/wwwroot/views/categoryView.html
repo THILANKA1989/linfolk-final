@@ -1,8 +1,13 @@
 ﻿
 <div>
+    <div class="row top-md-marg">
+        <div class="col-lg-12">
+            <h1 class="heading-strip-one">All Categories<span class="pull-right"><a href="#CategoryForm" class="button-bordered-red footertext" data-toggle="modal" data-target="#CategoryForm">Add New</a></span></h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-3" ng-repeat="category in vm.category">
-            <div class="card-four">
+            <div class="card-one">
                 <h2 class="text-center color-white border-set-bottom padset-bottom-sm">{{category.categoryName}}</h2>
                 <h3 class="color-white">Posts: <span class="label-danger">{{category.posts.length}}</span></h3>
             </div>
@@ -10,34 +15,39 @@
     </div>
     <div class="text-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
     <div ng-show="vm.isBusy" class="text-danger text-center"><i class="fa fa-spinner fa-spin"></i>Loading...</div>
-    <!--<table class="table table-responsive">
-        <tr ng-repeat="category in vm.category">
-            <td>{{category.categoryName}}</td>
-            <td>{{category.categoryUrl}}</td>
-            <td>{{category.posts.length}}</td>
-            <td><a href="#" class="btn btn-sm btn-mat">Manage</a></td>
-        </tr>
-    </table>-->
+   
+    <!-- Modal -->
+    <div class="modal fade" id="CategoryForm" role="dialog">
+        <div class="modal-dialog padset-md">
 
-    <h1>Add New Trip</h1>
-    <p>This will be added to the database</p>
-    <form novalidate name="newCategoryForm" ng-submit="vm.addCategory()">
-        <div class="form-group">
-            <p for="name">Category Name</p>
-            <input class="form-control" type="text" id="categoryName" name="categoryName" ng-model="vm.newCategory.categoryName" required ng-minlength="5" />
-            <span ng-show="newCategoryForm.categoryName.$error.required" class="color-red">Name is required</span>
-            <span ng-show="newCategoryForm.categoryName.$error.minlength" class="color-red">Name must be more than 5 characters</span>
+            <!-- Modal content-->
+            <div class="modal-content padset-md">
+                <h1>Add New Trip</h1>
+                <p>This will be added to the database</p>
+                <form novalidate name="newCategoryForm" ng-submit="vm.addCategory()">
+                    <div class="form-group">
+                        <p for="name">Category Name</p>
+                        <input class="form-control" type="text" id="categoryName" name="categoryName" ng-model="vm.newCategory.categoryName" required ng-minlength="5" />
+                        <span ng-show="newCategoryForm.categoryName.$error.required" class="color-red">Name is required</span>
+                        <span ng-show="newCategoryForm.categoryName.$error.minlength" class="color-red">Name must be more than 5 characters</span>
+                    </div>
+                    <div class="form-group">
+                        <p for="name">Category Url</p>
+                        <input class="form-control" type="text" id="categoryUrl" name="categoryUrl" ng-model="vm.newCategory.categoryUrl" required />
+                        <span ng-show="newCategoryForm.categoryUrl.$error.required" class="color-red">Title is required</span>
+                        <span ng-show="newCategoryForm.categoryUrl.$error.minlength" class="color-red">Name must be more than 5 characters</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add" class="btn btn-primary" ng-disabled="newCategoryForm.$invalid" />
+                    </div>
+                </form>
+            </div>
+
         </div>
-        <div class="form-group">
-            <p for="name">Category Url</p>
-            <input class="form-control" type="text" id="categoryUrl" name="categoryUrl" ng-model="vm.newCategory.categoryUrl" required />
-            <span ng-show="newCategoryForm.categoryUrl.$error.required" class="color-red">Title is required</span>
-            <span ng-show="newCategoryForm.categoryUrl.$error.minlength" class="color-red">Name must be more than 5 characters</span>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Add" class="btn btn-primary" ng-disabled="newCategoryForm.$invalid" />
-        </div>
-    </form>
+    </div>
+
+
+    
 </div>
 
 

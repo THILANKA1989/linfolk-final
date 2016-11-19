@@ -47,7 +47,7 @@ namespace WebApplication9.Models
         {
             try
             {
-                return _context.Categories.Include(t => t.Posts).ToList();
+                return _context.Categories.Include(t => t.Posts).OrderBy(a=>a.CategoryName).ToList();
             }
             catch (Exception ex)
             {
