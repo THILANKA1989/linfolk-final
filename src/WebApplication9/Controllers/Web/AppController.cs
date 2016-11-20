@@ -25,7 +25,7 @@ namespace WebApplication9.Controllers.Web
         public IActionResult Index()
         {
             var trips = _repository.GetAllTrips();
-            return View(trips);
+            return View();
         }
 
         public IActionResult Trips()

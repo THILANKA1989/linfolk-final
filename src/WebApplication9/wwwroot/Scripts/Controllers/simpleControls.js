@@ -6,7 +6,7 @@
     function waitCursor() {
         return {
             scope: {
-                displaywhen: "=displaywhen"
+                displaywhen: "=displayWhen"
             },
             restrict: "E",
             templateUrl: "/views/waitCursor.html"
