@@ -7,6 +7,12 @@
             templateUrl: "/views/categoryView.html"
         });
 
+        $routeProvider.when("/edit", {
+            controller: "categoryEditorController",
+            controllerAs: "vm",
+            templateUrl: "/views/categoryEditorView.html"
+        });
+
         $routeProvider.otherwise({ redirectTo: "/" });
     });
 })();
